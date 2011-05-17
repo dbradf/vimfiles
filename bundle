@@ -1,0 +1,81 @@
+#!/bin/sh
+
+BUNDLEDIR=$HOME/.vim/bundle
+PROGNAME=$(basename $0)
+
+
+# Display usage message
+# $1 - Error Message to display (Optional)
+usage() {
+    [ -n "$1" ] && echo $1
+    cat <<EOM
+
+USAGE: $PROGNAME <command>
+
+Commands
+    add
+    update
+    updateall
+EOM
+    exit 1
+} # end usage()
+
+
+# Add a git submodule as a vim bundle
+# $1 - url of git repository
+# $2 - local name for bundle
+add_bundle() {
+    [ $# -ne 2 ] && usage "Missing add arguments"
+
+    local git_repo=$1
+    local local_name=$2
+
+    git submodule add $git_repo vim/bundle/$local_name
+} # end add_bundle()
+
+
+# Update the specified vim bundle
+# $1 - local name of bundle
+update_bundle() {
+    [ $# -ne 1 ] && usage "Missing update arguments"
+    local local_name=$1
+
+    cd $BUNDLEDIR/$local_name
+    git pull
+} # end update_bundle()
+
+
+# Update all installed bundles
+update_all_bundles() {
+    [ $# -ne 0 ] && usage "Too many update all arguments"
+    
+    git submodule foreach git pull
+} # end update_all_bundles()
+
+
+################################################################################
+# Main
+################################################################################
+
+[ -z "$1" ] && usage "Missing command"
+
+command=$1
+shift
+
+case $command in
+    add )
+        add_bundle $@
+        ;;
+
+    update )
+        update_bundle $@
+        ;;
+
+    updateall )
+        update_all_bundles $@
+        ;;
+    * )
+        usage "Bad Command: $command"
+        ;;
+esac
+

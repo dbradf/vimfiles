@@ -1,0 +1,73 @@
+#1/bin/sh
+
+# Create a timestamp
+# Useful when marking file with the date
+timestamp() {
+    date +'%Y%m%d%H%M%S'
+} # end timestamp
+
+
+# Determine if a link points to a given file
+# $1 - Link to check
+# $2 - file to check if link points to it
+check_link() {
+    file=$1
+    expected=$2
+
+    dest=`ls -l $file | awk '{print $11}'`
+    if [ $dest = $expected ] ; then
+        return 0
+    fi
+    
+    return 1
+} # end check_link()
+
+
+# Create a link to the given file. If the file already exists, makes a backup
+# of the original file.
+# $1 - File to link to
+# $2 - Link to create
+create_link() {
+    source=$1
+    target=$2
+
+    if [ -z $source -o -z $target ]; then
+        return
+    fi
+
+    if [ -e $target ]; then
+        filetype=`ls -l $target | head -c 1`
+        if [ $filetype = "l" ]; then
+            echo "Link $target already exists"
+            check_link $target $source
+            if [ $? -ne 0 ]; then
+                echo "Link $target not set correctly; moving to bak"
+                mv $target $target.`timestamp`
+            else
+                return
+            fi
+        else 
+            echo "File $target exists; moving to bak"
+            mv $target $target.`timestamp`
+        fi
+    fi
+
+    ln -s $source $target
+
+    echo "Link Created $target -> $source"
+} # end create_link()
+
+
+################################################################################
+# Main
+################################################################################
+
+
+# Create links if needed
+create_link `pwd`/vimrc $HOME/.vimrc
+create_link `pwd`/vim   $HOME/.vim
+
+
+git submodule init
+git submodule update
+

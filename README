@@ -1,0 +1,14 @@
+Vim config files
+
+Install
+    run from this directory:
+        ./install
+
+Install new plugins:
+    ./bundle add url_to_git_repo local_name
+
+Update a plugin:
+    ./bundle update local_name
+
+Update all plugins:
+    ./bundle updateall
