@@ -15,7 +15,7 @@ check_link() {
     expected=$2
 
     dest=`ls -l $file | awk '{print $11}'`
-    if [ $dest = $expected ] ; then
+    if [ "$dest" = "$expected" ] ; then
         return 0
     fi
     
