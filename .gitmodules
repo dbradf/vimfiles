@@ -34,3 +34,6 @@
 [submodule "vim/bundle/snipmate"]
 	path = vim/bundle/snipmate
 	url = https://github.com/dbradf/snipmate.vim.git
+[submodule "vim/bundle/taglist-plus"]
+	path = vim/bundle/taglist-plus
+	url = https://github.com/int3/vim-taglist-plus.git

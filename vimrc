@@ -121,6 +121,10 @@ nmap <Leader>gs :Gstatus<CR>
 nmap <Leader>gd :Gdiff<CR>
 nmap <Leader>gc :Gcommit<CR>
 
+" cvs shortcuts
+" NERDCommenter overwrites this mapping, so do it
+nnoremap <Leader>cl :VCSLog<CR> 
+
 " build commands
 nmap <Leader>bc :silent !eval $BUILDCMD<CR>
 nmap <f5> :silent !eval $BUILDCMD<CR>
@@ -170,6 +174,9 @@ if $CSCOPEDB != ""
 endif
 
 nmap <silent> <Leader>csr :cs reset<CR><CR>
+nmap <Leader>csf :cs find f 
+nmap <Leader>csg :cs find g 
+nmap <Leader>css :cs find s 
 
 " ======= PLUGIN OPTIONS =======
 
