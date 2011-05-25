@@ -65,7 +65,8 @@ else
     "color vividchalk
 endif
 
-set guifont=Inconsolata\ Medium\ 11
+set guifont=Envy\ Code\ R\ 10
+"set guifont=Inconsolata\ Medium\ 11
 "set guifont=Anonymous\ Pro\ 9
 
 " Invisible Characters
