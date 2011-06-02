@@ -2,6 +2,8 @@
 
 BUNDLEDIR=$HOME/.vim/bundle
 PROGNAME=$(basename $0)
+GIT_MODULE_FILE=".gitmodules"
+GIT_CONFIG_FILE=".git/config"
 
 
 # Display usage message
@@ -16,6 +18,7 @@ Commands
     add
     update
     updateall
+    remove
 EOM
     exit 1
 } # end usage()
@@ -53,6 +56,35 @@ update_all_bundles() {
 } # end update_all_bundles()
 
 
+# Remove specified vim bundle
+# $1 - local name of bundle to remove
+remove_bundle() {
+    [ $# -ne 1 ] && usage "Missing remove arguments"
+    local local_name=$1
+
+    remove_bundle_from_git_file $local_name $GIT_MODULE_FILE
+    remove_bundle_from_git_file $local_name $GIT_CONFIG_FILE
+    git rm --cached vim/bundle/$local_name
+} # end remove_bundle()
+
+
+# Remove submodule info from a git file (.gitmodules or .git/config). 
+# NOTE: this counts on the url option being the last item under the 
+# submodule (this could be more robust)
+#   $1 - name of submodule to remove.
+#   $2 - file to remove submodule from.
+remove_bundle_from_git_file() {
+    [ $# -ne 2 ] && usage "Bad argument to remove_bundle_from_git_file"
+    local local_name=$1
+    local file_name=$2
+    local backup_file=$file_name.$$
+    local search_str="\\[submodule \\\"vim\\/bundle\\/$local_name\\\"\\]"
+
+    sed "/$search_str/,/url = /d" $file_name > $backup_file
+    mv $backup_file $file_name
+} # end remove_bundle_from_git_file() 
+
+
 ################################################################################
 # Main
 ################################################################################
@@ -74,6 +106,11 @@ case $command in
     updateall )
         update_all_bundles $@
         ;;
+
+    remove )
+        remove_bundle $@
+        ;;
+
     * )
         usage "Bad Command: $command"
         ;;
