@@ -1,6 +1,3 @@
-[submodule "vim/bundle/cscope_macros"]
-	path = vim/bundle/cscope_macros
-	url = https://github.com/vim-scripts/cscope_macros.vim.git
 [submodule "vim/bundle/extradite"]
 	path = vim/bundle/extradite
 	url = https://github.com/int3/vim-extradite.git
