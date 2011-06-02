@@ -65,6 +65,8 @@ remove_bundle() {
     remove_bundle_from_git_file $local_name $GIT_MODULE_FILE
     remove_bundle_from_git_file $local_name $GIT_CONFIG_FILE
     git rm --cached vim/bundle/$local_name
+    git add $GIT_MODULE_FILE
+    rm -rf vim/bundle/$local_name
 } # end remove_bundle()
 
 
