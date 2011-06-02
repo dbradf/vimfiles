@@ -38,18 +38,19 @@ call pathogen#runtime_append_all_bundles()
 
 " ======= Visual Options =======
 
-syntax on         " Turn on syntax highlighting
-set guioptions-=T " No Toolbar
-set number        " Show Line numbers
-set lz            " lazy redraw of macros
+syntax on             " Turn on syntax highlighting
+syntax sync fromstart " Determine syntax highlighting from start of file
+set guioptions-=T     " No Toolbar
+set number            " Show Line numbers
+set lz                " lazy redraw of macros
 if has("gui_running")
     set lines=50  
-    set columns=120
+    set columns=150
 endif
 
 " Set a wider display if diffing
 if &diff
-    set columns=180
+    set columns=200
 endif
 
 " Status Bar
