@@ -37,3 +37,6 @@
 [submodule "vim/bundle/rails"]
 	path = vim/bundle/rails
 	url = https://github.com/tpope/vim-rails.git
+[submodule "vim/bundle/cscope_macros"]
+	path = vim/bundle/cscope_macros
+	url = https://github.com/dbradf/cscope_macros.vim.git
