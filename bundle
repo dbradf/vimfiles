@@ -15,10 +15,13 @@ usage() {
 USAGE: $PROGNAME <command>
 
 Commands
-    add
-    update
-    updateall
-    remove
+    add <git_repo> <bundle_name> - Add a new bundle from the given git 
+                                   repository.
+    list                         - List all installed bundles.
+    update <bundle_name>         - Update the specified bundle to the latest 
+                                   version.
+    updateall                    - Update all bundles to the latest versions.
+    remove <bundle_name>         - Remove the specified bundle.
 EOM
     exit 1
 } # end usage()
@@ -35,6 +38,12 @@ add_bundle() {
 
     git submodule add $git_repo vim/bundle/$local_name
 } # end add_bundle()
+
+
+# List all installed bundles.
+list_bundles() {
+    ls -1 $BUNDLEDIR
+} # end list_bundles()    
 
 
 # Update the specified vim bundle
@@ -99,6 +108,10 @@ shift
 case $command in
     add )
         add_bundle $@
+        ;;
+
+    list )
+        list_bundles $@
         ;;
 
     update )
