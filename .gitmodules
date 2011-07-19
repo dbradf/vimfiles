@@ -49,3 +49,6 @@
 [submodule "vim/bundle/gundo"]
 	path = vim/bundle/gundo
 	url = http://github.com/sjl/gundo.vim.git
+[submodule "vim/bundle/shim"]
+	path = vim/bundle/shim
+	url = https://github.com/vim-scripts/Superior-Haskell-Interaction-Mode-SHIM.git
