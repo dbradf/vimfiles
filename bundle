@@ -1,20 +1,27 @@
 #!/bin/sh
 
-BUNDLEDIR=$HOME/.vim/bundle
+VERSION=0.2
 PROGNAME=$(basename $0)
-GIT_MODULE_FILE=".gitmodules"
-GIT_CONFIG_FILE=".git/config"
+
+BUNDLEDIR=$HOME/.vim/bundle
+GIT_MODULE_FILE=.gitmodules
+GIT_CONFIG_FILE=.git/config
 
 
 # Display usage message
 # $1 - Error Message to display (Optional)
 usage() {
-    [ -n "$1" ] && echo $1
+    [ -n "$1" ] && echo $1 >&2
     cat <<EOM
+Usage: $PROGNAME [flags] <command>
 
-USAGE: $PROGNAME <command>
+Description:
+    Manage bundles used by vim.
 
-Commands
+Flags:
+    -d <directory>                Bundle directory to use (default=$BUNDLEDIR)
+
+Arguments:
     add <git_repo> <bundle_name> - Add a new bundle from the given git 
                                    repository.
     list                         - List all installed bundles.
@@ -22,6 +29,8 @@ Commands
                                    version.
     updateall                    - Update all bundles to the latest versions.
     remove <bundle_name>         - Remove the specified bundle.
+
+Version: $VERSION
 EOM
     exit 1
 } # end usage()
@@ -49,7 +58,7 @@ list_bundles() {
 # Update the specified vim bundle
 # $1 - local name of bundle
 update_bundle() {
-    [ $# -ne 1 ] && usage "Missing update arguments"
+    [ $# -ne 1 ] && usage "ERROR: update: Missing bundle_name"
     local local_name=$1
 
     cd $BUNDLEDIR/$local_name
@@ -59,7 +68,7 @@ update_bundle() {
 
 # Update all installed bundles
 update_all_bundles() {
-    [ $# -ne 0 ] && usage "Too many update all arguments"
+    [ $# -ne 0 ] && usage "ERROR: updateall: Unexpected arguments"
     
     git submodule foreach git pull
 } # end update_all_bundles()
@@ -68,7 +77,7 @@ update_all_bundles() {
 # Remove specified vim bundle
 # $1 - local name of bundle to remove
 remove_bundle() {
-    [ $# -ne 1 ] && usage "Missing remove arguments"
+    [ $# -ne 1 ] && usage "ERROR: remove: Missing bundle_name"
     local local_name=$1
 
     remove_bundle_from_git_file $local_name $GIT_MODULE_FILE
@@ -100,34 +109,54 @@ remove_bundle_from_git_file() {
 # Main
 ################################################################################
 
-[ -z "$1" ] && usage "Missing command"
+have_args=1
+
+while [ -n "$have_args" ]; do
+    arg=$1
+
+    case $arg in
+        -d)
+            [ -z "$2" ] && usage "ERROR: Bundle directory missing from -d flag"
+            BUNDLEDIR=$2
+            shift 2
+            ;;
+
+        *)
+            have_args=
+            ;;
+    esac
+done
+
+
+
+[ -z "$1" ] && usage "ERROR: Missing command"
 
 command=$1
 shift
 
 case $command in
-    add )
+    add)
         add_bundle $@
         ;;
 
-    list )
+    list)
         list_bundles $@
         ;;
 
-    update )
+    update)
         update_bundle $@
         ;;
 
-    updateall )
+    updateall)
         update_all_bundles $@
         ;;
 
-    remove )
+    remove)
         remove_bundle $@
         ;;
 
-    * )
-        usage "Bad Command: $command"
+    *)
+        usage "ERROR: Bad Command: $command"
         ;;
 esac
 

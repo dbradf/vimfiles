@@ -40,15 +40,9 @@
 [submodule "vim/bundle/cscope_macros"]
 	path = vim/bundle/cscope_macros
 	url = https://github.com/dbradf/cscope_macros.vim.git
-[submodule "vim/bundle/csapprox"]
-	path = vim/bundle/csapprox
-	url = https://github.com/vim-scripts/CSApprox
 [submodule "vim/bundle/css-color"]
 	path = vim/bundle/css-color
 	url = https://github.com/skammer/vim-css-color.git
 [submodule "vim/bundle/gundo"]
 	path = vim/bundle/gundo
 	url = http://github.com/sjl/gundo.vim.git
-[submodule "vim/bundle/shim"]
-	path = vim/bundle/shim
-	url = https://github.com/vim-scripts/Superior-Haskell-Interaction-Mode-SHIM.git

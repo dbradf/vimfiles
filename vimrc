@@ -62,7 +62,8 @@ if $VIMCOLORSCHEME != ""
     color $VIMCOLORSCHEME
 else
     set background=dark
-    color solarized
+    color tweakchalk
+    "color solarized
     "color vividchalk
 endif
 
@@ -193,6 +194,9 @@ if $CTAGS_BINARY != ""
 endif
 
 nmap <silent> <leader>ta :TlistToggle<CR>
+
+nmap <leader>f= :Tabularize /=<CR>
+nmap <leader>f- :Tabularize /-<CR>
 
 " ======= Functions =======
 
