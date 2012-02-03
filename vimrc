@@ -62,9 +62,9 @@ if $VIMCOLORSCHEME != ""
     color $VIMCOLORSCHEME
 else
     set background=dark
-    color tweakchalk
+    "color tweakchalk
     "color solarized
-    "color vividchalk
+    color vividchalk
 endif
 
 set guifont=Envy\ Code\ R\ 10
@@ -72,7 +72,7 @@ set guifont=Envy\ Code\ R\ 10
 "set guifont=Anonymous\ Pro\ 9
 
 " Invisible Characters
-set listchars=tab:▸\ ,eol:¬
+"set listchars=tab:▸\ ,eol:¬
 "set list "Show invisible characters
 
 " Highlight cursor position
@@ -169,7 +169,7 @@ nmap <silent> <Leader>D :sign unplace *<CR>
 if $CSCOPE_BINARY != ""
     set csprg=$CSCOPE_BINARY
 else
-    set csprg=/usr/bin/cscope
+    set csprg=/gsa/ausgsa/home/d/a/davidbra/local/bin/cscope
 endif
 
 if $CSCOPEDB != ""
