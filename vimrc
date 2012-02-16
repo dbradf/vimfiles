@@ -62,12 +62,10 @@ if $VIMCOLORSCHEME != ""
     color $VIMCOLORSCHEME
 else
     set background=dark
-    "color tweakchalk
-    "color solarized
-    color vividchalk
+    color badwolf
 endif
 
-set guifont=Envy\ Code\ R\ 10
+set guifont=Envy\ Code\ R:h13
 "set guifont=Inconsolata\ Medium\ 11
 "set guifont=Anonymous\ Pro\ 9
 

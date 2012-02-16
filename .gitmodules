@@ -43,3 +43,6 @@
 [submodule "vim/bundle/hemisu"]
 	path = vim/bundle/hemisu
 	url = git://github.com/noahfrederick/Hemisu.git
+[submodule "vim/bundle/badwolf"]
+	path = vim/bundle/badwolf
+	url = git://github.com/sjl/badwolf.git
