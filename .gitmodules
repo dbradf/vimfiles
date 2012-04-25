@@ -1,48 +1,33 @@
-[submodule "vim/bundle/extradite"]
-	path = vim/bundle/extradite
-	url = https://github.com/int3/vim-extradite.git
-[submodule "vim/bundle/fugitive"]
-	path = vim/bundle/fugitive
-	url = https://github.com/tpope/vim-fugitive.git
-[submodule "vim/bundle/gitv"]
-	path = vim/bundle/gitv
-	url = https://github.com/gregsexton/gitv.git
-[submodule "vim/bundle/nerdcommenter"]
-	path = vim/bundle/nerdcommenter
-	url = https://github.com/scrooloose/nerdcommenter.git
-[submodule "vim/bundle/nerdtree"]
-	path = vim/bundle/nerdtree
-	url = https://github.com/wycats/nerdtree.git
-[submodule "vim/bundle/solarized"]
-	path = vim/bundle/solarized
-	url = https://github.com/vim-scripts/Solarized.git
-[submodule "vim/bundle/tabular"]
-	path = vim/bundle/tabular
-	url = https://github.com/godlygeek/tabular.git
-[submodule "vim/bundle/tasklist"]
-	path = vim/bundle/tasklist
-	url = https://github.com/vim-scripts/TaskList.vim.git
-[submodule "vim/bundle/vcscommand"]
-	path = vim/bundle/vcscommand
-	url = https://github.com/vim-scripts/vcscommand.vim.git
-[submodule "vim/bundle/snipmate"]
-	path = vim/bundle/snipmate
-	url = https://github.com/dbradf/snipmate.vim.git
-[submodule "vim/bundle/rails"]
-	path = vim/bundle/rails
-	url = https://github.com/tpope/vim-rails.git
-[submodule "vim/bundle/cscope_macros"]
-	path = vim/bundle/cscope_macros
-	url = https://github.com/dbradf/cscope_macros.vim.git
-[submodule "vim/bundle/css-color"]
-	path = vim/bundle/css-color
-	url = https://github.com/skammer/vim-css-color.git
-[submodule "vim/bundle/gundo"]
-	path = vim/bundle/gundo
-	url = http://github.com/sjl/gundo.vim.git
 [submodule "vim/bundle/hemisu"]
 	path = vim/bundle/hemisu
 	url = git://github.com/noahfrederick/Hemisu.git
 [submodule "vim/bundle/badwolf"]
 	path = vim/bundle/badwolf
 	url = git://github.com/sjl/badwolf.git
+[submodule "vim/bundle/nerdtree"]
+	path = vim/bundle/nerdtree
+	url = git://github.com/wycats/nerdtree.git
+[submodule "vim/bundle/tasklist"]
+	path = vim/bundle/tasklist
+	url = git://github.com/vim-scripts/TaskList.vim.git
+[submodule "vim/bundle/git-fugitive"]
+	path = vim/bundle/git-fugitive
+	url = git://github.com/tpope/vim-fugitive.git
+[submodule "vim/bundle/nerdcommenter"]
+	path = vim/bundle/nerdcommenter
+	url = git://github.com/scrooloose/nerdcommenter.git
+[submodule "vim/bundle/solarized"]
+	path = vim/bundle/solarized
+	url = git://github.com/vim-scripts/Solarized.git
+[submodule "vim/bundle/tabular"]
+	path = vim/bundle/tabular
+	url = git://github.com/godlygeek/tabular.git
+[submodule "vim/bundle/snipmate"]
+	path = vim/bundle/snipmate
+	url = git@github.com:dbradf/snipmate.vim.git
+[submodule "vim/bundle/css-color"]
+	path = vim/bundle/css-color
+	url = git://github.com/skammer/vim-css-color.git
+[submodule "vim/bundle/cscope_macros"]
+	path = vim/bundle/cscope_macros
+	url = git@github.com:dbradf/cscope_macros.vim.git
