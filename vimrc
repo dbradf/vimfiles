@@ -209,7 +209,7 @@ function! MyStatusLine(mode)
         let statusline .= "%#StatColor#"
     endif
 
-    let statusline .= "\(%n\)\ %f\ "
+    let statusline .= "%f\ \(%n\)\ "
     if a:mode == 'Enter'
         let statusline .= "%*"
     endif

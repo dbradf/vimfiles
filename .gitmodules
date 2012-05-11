@@ -4,9 +4,6 @@
 [submodule "vim/bundle/badwolf"]
 	path = vim/bundle/badwolf
 	url = git://github.com/sjl/badwolf.git
-[submodule "vim/bundle/nerdtree"]
-	path = vim/bundle/nerdtree
-	url = git://github.com/wycats/nerdtree.git
 [submodule "vim/bundle/tasklist"]
 	path = vim/bundle/tasklist
 	url = git://github.com/vim-scripts/TaskList.vim.git
@@ -31,3 +28,6 @@
 [submodule "vim/bundle/cscope_macros"]
 	path = vim/bundle/cscope_macros
 	url = git@github.com:dbradf/cscope_macros.vim.git
+[submodule "vim/bundle/nerdtree"]
+	path = vim/bundle/nerdtree
+	url = git://github.com/dbradf/nerdtree.git
