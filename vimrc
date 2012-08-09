@@ -62,7 +62,7 @@ if $VIMCOLORSCHEME != ""
     color $VIMCOLORSCHEME
 else
     set background=dark
-    color badwolf
+    color hybrid
 endif
 
 set guifont=Envy\ Code\ R:h13
