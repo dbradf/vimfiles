@@ -130,6 +130,9 @@ nnoremap <Leader>cl :VCSLog<CR>
 nmap <Leader>bc :silent !eval $BUILDCMD<CR>
 nmap <f5> :silent !eval $BUILDCMD<CR>
 
+" CtrlP
+nmap <Leader>o :CtrlPMixed<CR>
+
 " ======= File Type Specific =======
 filetype on
 filetype plugin on
