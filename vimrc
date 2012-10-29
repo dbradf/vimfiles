@@ -91,6 +91,9 @@ set cino=(0,c1
 
 " ======= Key Mapping =======
 
+inoremap jk <esc>
+nnoremap <cr> :noh<cr><cr>
+
 " Easier movement around split windows
 map <C-j> <C-W>j 
 map <C-k> <C-W>k
@@ -100,6 +103,9 @@ map <C-l> <C-W>l
 " Accordion style movement
 map <s-up> <c-w>k<c-w>_
 map <s-down> <c-w>j<c-w>_
+
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " tab shortcuts
 nmap <S-t> :tabnew<cr>
