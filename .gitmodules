@@ -37,3 +37,6 @@
 [submodule "vim/bundle/ctrlp"]
 	path = vim/bundle/ctrlp
 	url = git://github.com/kien/ctrlp.vim.git
+[submodule "vim/bundle/golang"]
+	path = vim/bundle/golang
+	url = https://github.com/jnwhiteh/vim-golang.git
