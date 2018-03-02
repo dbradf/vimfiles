@@ -37,6 +37,10 @@ filetype off
 call pathogen#runtime_append_all_bundles()
 
 " ======= Visual Options =======
+"
+if (has("termguicolors"))
+    set termguicolors
+endif
 
 syntax on             " Turn on syntax highlighting
 syntax sync fromstart " Determine syntax highlighting from start of file
@@ -62,12 +66,8 @@ if $VIMCOLORSCHEME != ""
     color $VIMCOLORSCHEME
 else
     set background=dark
-    color hybrid
+    color tender
 endif
-
-set guifont=Envy\ Code\ R:h13
-"set guifont=Inconsolata\ Medium\ 11
-"set guifont=Anonymous\ Pro\ 9
 
 " Invisible Characters
 "set listchars=tab:▸\ ,eol:¬
