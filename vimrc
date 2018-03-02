@@ -19,7 +19,7 @@ set showmatch    " show matching backets
 set matchtime=3  " how long to blink matching brackets for(1/10 of sec)
 
 set wildmode=list:longest      " Enable tab completion in the minibuffer
-set backspace=indent,eol,start " allow backspacing over everything 
+set backspace=indent,eol,start " allow backspacing over everything
 set diffopt+=filler
 
 set directory=$HOME/tmp " Use a temporary directory for swp files
@@ -28,13 +28,13 @@ set directory=$HOME/tmp " Use a temporary directory for swp files
 set t_Co=256
 
 " ======= Setup Pathogen =======
-" Note that you need to invoke the pathogen functions before invoking 
-" 'filetype plugin indent on' if you want it to load ftdetect files. 
-" On Debian (and probably other distros), the system vimrc does this 
-" early on, so you actually need to 'filetype off' before 'filetype 
+" Note that you need to invoke the pathogen functions before invoking
+" 'filetype plugin indent on' if you want it to load ftdetect files.
+" On Debian (and probably other distros), the system vimrc does this
+" early on, so you actually need to 'filetype off' before 'filetype
 " plugin indent on' to force reloading.
 filetype off
-call pathogen#runtime_append_all_bundles() 
+call pathogen#runtime_append_all_bundles()
 
 " ======= Visual Options =======
 
@@ -44,7 +44,7 @@ set guioptions-=T     " No Toolbar
 set number            " Show Line numbers
 set lz                " lazy redraw of macros
 if has("gui_running")
-    set lines=50  
+    set lines=50
     set columns=150
 endif
 
@@ -95,7 +95,7 @@ inoremap jk <esc>
 nnoremap <cr> :noh<cr><cr>
 
 " Easier movement around split windows
-map <C-j> <C-W>j 
+map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
@@ -121,16 +121,12 @@ vmap <silent> <Leader>i= <ESC>:Tabularize / = <CR>
 nmap <silent> <Leader>i= <ESC>:Tabularize / = <CR>
 
  " Remove all trailing whitespace from file
-nmap <silent> <Leader>rws :%s/\s\+$//<CR> 
+nmap <silent> <Leader>rws :%s/\s\+$//<CR>
 
 " git shortcuts
 nmap <Leader>gs :Gstatus<CR>
 nmap <Leader>gd :Gdiff<CR>
 nmap <Leader>gc :Gcommit<CR>
-
-" cvs shortcuts
-" NERDCommenter overwrites this mapping, so do it
-nnoremap <Leader>cl :VCSLog<CR> 
 
 " build commands
 nmap <Leader>bc :silent !eval $BUILDCMD<CR>
@@ -161,39 +157,12 @@ autocmd FileType html set ts=2|set sw=2|set expandtab|set sts=2
 
 " Highling lines over 80 charachters
 " autocmd BufEnter  * 2match SpellCap /.\%>80v.\+/
-set cc=81
+set cc=101
 
-
-" ======= Line Bookmarking =========
-
-sign define bookmark text=@
-nmap <silent> <Leader>b :exe ":sign place " . line(".") . " name=bookmark line" . line(".") . " file=" . expand("%:p")<CR>
-nmap <silent> <Leader>d :sign unplace<CR>
-nmap <silent> <Leader>D :sign unplace *<CR>
-
-" ======= CSCOPE ========
-
-if $CSCOPE_BINARY != ""
-    set csprg=$CSCOPE_BINARY
-else
-    set csprg=/gsa/ausgsa/home/d/a/davidbra/local/bin/cscope
-endif
-
-if $CSCOPEDB != ""
-	cs add $CSCOPEDB $CSCOPEFILELIST
-endif
-
-nmap <silent> <Leader>csr :cs reset<CR><CR>
-nmap <Leader>csf :cs find f 
-nmap <Leader>csg :cs find g 
-nmap <Leader>css :cs find s 
 
 " ======= PLUGIN OPTIONS =======
 
 map <leader>n :execute 'NERDTreeToggle ' . getcwd()<CR>
-
-map <leader>ut :GundoToggle<CR>
-let g:gundo_right = 1
 
 
 if $CTAGS_BINARY != ""
@@ -201,9 +170,6 @@ if $CTAGS_BINARY != ""
 endif
 
 nmap <silent> <leader>ta :TlistToggle<CR>
-
-nmap <leader>f= :Tabularize /=<CR>
-nmap <leader>f- :Tabularize /-<CR>
 
 " ======= Functions =======
 

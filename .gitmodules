@@ -1,9 +1,6 @@
 [submodule "vim/bundle/hemisu"]
 	path = vim/bundle/hemisu
 	url = git://github.com/noahfrederick/Hemisu.git
-[submodule "vim/bundle/badwolf"]
-	path = vim/bundle/badwolf
-	url = git://github.com/sjl/badwolf.git
 [submodule "vim/bundle/tasklist"]
 	path = vim/bundle/tasklist
 	url = git://github.com/vim-scripts/TaskList.vim.git
