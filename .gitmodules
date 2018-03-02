@@ -1,9 +1,6 @@
 [submodule "vim/bundle/hemisu"]
 	path = vim/bundle/hemisu
 	url = git://github.com/noahfrederick/Hemisu.git
-[submodule "vim/bundle/tasklist"]
-	path = vim/bundle/tasklist
-	url = git://github.com/vim-scripts/TaskList.vim.git
 [submodule "vim/bundle/git-fugitive"]
 	path = vim/bundle/git-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
