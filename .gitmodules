@@ -43,3 +43,12 @@
 [submodule "vim/bundle/ale"]
 	path = vim/bundle/ale
 	url = https://github.com/w0rp/ale.git
+[submodule "vim/bundle/command-t"]
+	path = vim/bundle/command-t
+	url = https://github.com/wincent/command-t.git
+[submodule "vim/bundle/vim-polyglot"]
+	path = vim/bundle/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot.git
+[submodule "vim/bundle/vim-javascript"]
+	path = vim/bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git

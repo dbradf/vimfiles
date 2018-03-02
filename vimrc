@@ -164,6 +164,8 @@ set cc=101
 
 map <leader>n :execute 'NERDTreeToggle ' . getcwd()<CR>
 
+let g:polyglot_disabled = ['javascript']
+
 
 if $CTAGS_BINARY != ""
     let Tlist_Ctags_Cmd = $CTAGS_BINARY
