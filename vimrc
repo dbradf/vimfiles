@@ -162,16 +162,16 @@ set cc=101
 
 " ======= PLUGIN OPTIONS =======
 
+" NerdTree
 map <leader>n :execute 'NERDTreeToggle ' . getcwd()<CR>
 
+" Polyglot
 let g:polyglot_disabled = ['javascript']
 
-
+" Ctags
 if $CTAGS_BINARY != ""
     let Tlist_Ctags_Cmd = $CTAGS_BINARY
 endif
-
-nmap <silent> <leader>ta :TlistToggle<CR>
 
 " ======= Functions =======
 
