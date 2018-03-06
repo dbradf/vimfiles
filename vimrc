@@ -224,5 +224,6 @@ au InsertLeave * hi StatColor guibg=#95e454 guifg=black ctermbg=lightgreen cterm
 
 autocmd VimResized * wincmd =
 
+set t_ut= " Disable Background Color Erase (BCE) so that color schemes work propery inside tmux
 
 
