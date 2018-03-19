@@ -173,6 +173,10 @@ if $CTAGS_BINARY != ""
     let Tlist_Ctags_Cmd = $CTAGS_BINARY
 endif
 
+" YouCompleteMe
+set completeopt-=preview
+let g:ycm_add_preview_to_completeopt = 0
+
 " ======= Functions =======
 
 "set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]\ %{fugitive#statusline()}
@@ -222,7 +226,8 @@ endfunction
 au InsertEnter * call InsertStatuslineColor(v:insertmode)
 au InsertLeave * hi StatColor guibg=#95e454 guifg=black ctermbg=lightgreen ctermfg=black
 
-autocmd VimResized * wincmd =
+autocmd VimResized * wincmd = " Resize splits when vim is resized
+autocmd BufWritePre * %s/\s\+$//e " remove trailing whitespace on save
 
 set t_ut= " Disable Background Color Erase (BCE) so that color schemes work propery inside tmux
 
