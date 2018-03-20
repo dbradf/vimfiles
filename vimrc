@@ -77,17 +77,12 @@ endif
 "set cursorline
 "set cursorcolumn
 
-
 " ======= Indent =======
 
 " Use 4 space tabs
 set tabstop=4
 set shiftwidth=4
 set expandtab
-
-" One a line after an open paren put the cursor right after the open paren
-set cino=(0,c1
-
 
 " ======= Key Mapping =======
 
