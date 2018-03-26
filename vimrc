@@ -221,9 +221,14 @@ endfunction
 au InsertEnter * call InsertStatuslineColor(v:insertmode)
 au InsertLeave * hi StatColor guibg=#95e454 guifg=black ctermbg=lightgreen ctermfg=black
 
+" Update buffer on external file changes
+" https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
+autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
+autocmd FileChangedShellPost *
+            \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
+
 autocmd VimResized * wincmd = " Resize splits when vim is resized
 autocmd BufWritePre * %s/\s\+$//e " remove trailing whitespace on save
 
 set t_ut= " Disable Background Color Erase (BCE) so that color schemes work propery inside tmux
-
 
