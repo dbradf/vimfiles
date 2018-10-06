@@ -55,6 +55,3 @@
 [submodule "vim/bundle/tender"]
 	path = vim/bundle/tender
 	url = https://github.com/jacoborus/tender.vim.git
-[submodule "vim/bundle/youcompleteme"]
-	path = vim/bundle/youcompleteme
-	url = https://github.com/Valloric/YouCompleteMe.git
